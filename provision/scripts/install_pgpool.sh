@@ -20,10 +20,10 @@ install -d -o postgres -g postgres -m 755 "$PGPOOL_BASE/logs"
 install -d -o postgres -g postgres -m 755 "$PGPOOL_BASE/conf"
 
 # SKP compatibility
-[[ -L /app ]] || ln -s /srv /app
+[[ -L /app ]] || ln -snf /srv /app
 if [[ ! -d $PGPOOL_BASE/bin ]]; then
 	install -d -o root -g root "$PGPOOL_BASE/bin"
-	ln -s /usr/pgpool-9.3/bin/* "$PGPOOL_BASE/bin"
+	ln -snf /usr/pgpool-9.3/bin/* "$PGPOOL_BASE/bin"
 fi
 
 echo "export PATH=$PATH:/usr/pgpool-9.3/bin" > /etc/profile.d/pgpool.sh
