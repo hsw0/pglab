@@ -8,3 +8,7 @@ echo Provisioning node $(hostname)
 if [[ "$HOSTNAME" == "db1" ]]; then
 	/vagrant/provision/scripts/initdb.sh
 fi
+
+if [[ "$HOSTNAME" == "db1" || "$HOSTNAME" == "db2" ]]; then
+	/vagrant/provision/scripts/install_pgpool.sh
+fi
