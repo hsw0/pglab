@@ -10,6 +10,19 @@ db1~5 5대에서 cascading replication, pgpool 실습
 
 ## 사용방법
 
+### postgres 계정 셸 진입
+
+```
+$ sudo -u postgres -i
+```
+
+### DB 시작 / 종료
+
+```
+postgres@db* $ pg_ctl -D /data/pg_data start
+postgres@db* $ pg_ctl -D /data/pg_data stop
+```
+
 
 ### SSH 접속
 
