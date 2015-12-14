@@ -27,7 +27,7 @@ if [[ ! -d /app ]]; then
 	ln -s /data/pg_log "$PGSQL_BASE/logs"
 fi
 
-echo "export PATH=$PATH:/usr/pgsql-9.3/bin" > /etc/profile.d/pgsql
-echo "export PG_DATA=/data/pg_data" >> /etc/profile.d/pgsql
+echo "export PATH=$PATH:/usr/pgsql-9.3/bin" > /etc/profile.d/pgsql.sh
+echo "export PG_DATA=/data/pg_data" >> /etc/profile.d/pgsql.sh
 
 echo 'completed!'
