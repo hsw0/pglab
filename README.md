@@ -61,26 +61,28 @@ $ vagrant provision [vm-name] # 미지정시 전체 대상
 
 ### 백업 및 복원
 
-* [공식 문서, 24. Backup and Restore](http://www.postgresql.org/docs/9.3/static/backup.html) [번역](http://postgresql.kr/docs/9.4/backup.html)
+* [공식 문서, 24. Backup and Restore](http://www.postgresql.org/docs/9.3/static/backup.html) / [번역](http://postgresql.kr/docs/9.4/backup.html)
 
 
 ### 복제
 
-* [공식 문서, 25. High Availability, Load Balancing, and Replication ](http://www.postgresql.org/docs/9.3/static/high-availability.html) [번역](http://postgresql.kr/docs/9.4/high-availability.html)
-* [공식 문서, 18.6. Replication (파라메터)](http://www.postgresql.org/docs/9.3/static/runtime-config-replication.html) [번역](http://postgresql.kr/docs/9.4/runtime-config-replication.html)
+* [공식 문서, 25. High Availability, Load Balancing, and Replication ](http://www.postgresql.org/docs/9.3/static/high-availability.html) / [번역](http://postgresql.kr/docs/9.4/high-availability.html)
+* [공식 문서, 18.6. Replication (파라메터)](http://www.postgresql.org/docs/9.3/static/runtime-config-replication.html) / [번역](http://postgresql.kr/docs/9.4/runtime-config-replication.html)
 
 
-* [WAL Internals Of PostgreSQL](https://www.pgcon.org/2012/schedule/attachments/258_212_Internals%20Of%20PostgreSQL%20Wal.pdf)
-* [pg_rewind](http://hlinnaka.iki.fi/presentations/NordicPGDay2015-pg_rewind.pdf)
+* [Amit Kapila, "WAL Internals Of PostgreSQL", PGCon 2012 ](https://www.pgcon.org/2012/schedule/attachments/258_212_Internals%20Of%20PostgreSQL%20Wal.pdf)
+* [Heikki Linnakangas, "pg_rewind", 2015](http://hlinnaka.iki.fi/presentations/NordicPGDay2015-pg_rewind.pdf) / [공식 문서](http://www.postgresql.org/docs/9.5/static/app-pgrewind.html) / [블로그](http://hlinnaka.iki.fi/2015/03/23/pg_rewind-in-postgresql-9-5/)
 
 ### 튜닝
 
-* [공식 문서, 18.4. Resource Consumption](http://www.postgresql.org/docs/9.3/static/runtime-config-resource.html) [번역](http://postgresql.kr/docs/9.4/runtime-config-resource.html)
+* [공식 문서, 18.4. Resource Consumption](http://www.postgresql.org/docs/9.3/static/runtime-config-resource.html) / [번역](http://postgresql.kr/docs/9.4/runtime-config-resource.html)
 * [PgTune](http://pgtune.leopard.in.ua/): 설정파일 자동 계산
 
 ### 로깅
 
-* [공식 문서, 18.8. Error reporting and logging](http://www.postgresql.org/docs/9.3/static/runtime-config-logging.html) [번역](http://postgresql.kr/docs/9.4/runtime-config-logging.html)`
+* [공식 문서, 18.8. Error reporting and logging](http://www.postgresql.org/docs/9.3/static/runtime-config-logging.html) / [번역](http://postgresql.kr/docs/9.4/runtime-config-logging.html)
+
+* [pgFouine](http://pgfouine.projects.pgfoundry.org/tutorial.html) - a PostgreSQL log analyzer
 
 
 ### Vagrant
