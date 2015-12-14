@@ -23,6 +23,19 @@ postgres@db* $ pg_ctl -D /data/pg_data start
 postgres@db* $ pg_ctl -D /data/pg_data stop
 ```
 
+### 데이터 디렉터리 복제
+
+```
+postgres@db3 $ pg_basebackup --host=db2 --username=repl  --verbose --progress --xlog --pgdata=/data/pg_data
+```
+
+* `--host`: 원본 호스트
+* `--username`: replication DB 계정
+* `--progress`: 진행 프로그레스 바 표시
+* `--xlog`: 복제를 진행하면서 변경된 WAL LOG도 같이 복제
+* `--pgdata`: 대상 디렉터리 명
+
+온라인으로 원본 호스트로부터 데이터 디렉터리를 통째로 복제.
 
 ### SSH 접속
 
