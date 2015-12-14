@@ -17,8 +17,8 @@ yum_install epel-release
 yum_install postgresql93-{server,contrib,devel,plpython} postgis2_93
 
 # SKP compatibility
-install -d -o postgres -g postgres "/data/pg_data"
-install -d -o postgres -g postgres "/data/pg_log"
+install -d -o postgres -g postgres -m 700 "/data/pg_data"
+install -d -o postgres -g postgres -m 700 "/data/pg_log"
 if [[ ! -d /app ]]; then
 	ln -s /srv /app
 	install -d -o root -g root "$PGSQL_BASE/bin"
