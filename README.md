@@ -8,13 +8,64 @@ db1~5 5대에서 cascading replication, pgpool 실습
    - PostgreSQL 9.3
    - pgpool 3.4
 
-## 사용방법
+## PostgreSQL Lab
+
 
 ### postgres 계정 셸 진입
 
 ```
 $ sudo -u postgres -i
 ```
+
+## pgpool Lab
+
+### 기동
+
+```
+$ nohup pgpool --config-file=$PGPOOL_BASE/conf/pgpool.conf --pcp-file=$PGPOOL_BASE/conf/pcp.conf --hba-file=$PGPOOL_BASE/conf/pool_hba.conf --dont-detach > $PGPOOL_BASE/logs/pgpool-$(date +%Y%m%d_%H%M%S).log &
+```
+
+
+### reload
+
+```
+$ pgpool --config-file=$PGPOOL_BASE/conf/pgpool.conf --pcp-file=$PGPOOL_BASE/conf/pcp.conf --hba-file=$PGPOOL_BASE/conf/pool_hba.conf reload
+```
+
+
+### 종료
+
+```
+$ pgpool --config-file=$PGPOOL_BASE/conf/pgpool.conf --pcp-file=$PGPOOL_BASE/conf/pcp.conf --hba-file=$PGPOOL_BASE/conf/pool_hba.conf --mode fast stop
+```
+
+위 명령으로 한번에 죽지 않을 경우,
+
+```
+$ killall -9 pgpool
+$ rm -f /tmp/.s.PGSQL.{5433,9898}  # socket 파일 제거
+$ sudo ifconfig eth1:0 down  # VIP 인터페이스 down
+```
+
+
+### pcp.conf 설정
+
+```
+$ /usr/pgpool-9.3/bin/pg_md5 --prompt  # md5 hash 생성
+```
+
+pcp.conf 에 `username:해시` 형태로 기록.
+`ex) pcp:3d27c2e24377377bdd907962a53e13eb`
+
+### pool_passwd 설정
+
+```
+$ /usr/pgpool-9.3/bin/pg_md5 --config-file /app/postgresql/pgpool/conf/pgpool.conf --prompt --md5auth --username <pgpool/pg계정명>
+```
+
+
+
+## Vagrant 기초 
 
 ### DB 시작 / 종료
 
@@ -66,8 +117,6 @@ $ vagrant halt [vm-name] # 미지정시 전체 대상
 ```
 $ vagrant provision [vm-name] # 미지정시 전체 대상
 ```
-
-
 
 
 ## 참고자료
