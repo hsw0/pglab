@@ -28,6 +28,6 @@ if [[ ! -d /app ]]; then
 fi
 
 echo "export PATH=$PATH:/usr/pgsql-9.3/bin" > /etc/profile.d/pgsql.sh
-echo "export PG_DATA=/data/pg_data" >> /etc/profile.d/pgsql.sh
+echo "export PGDATA=/data/pg_data" >> /etc/profile.d/pgsql.sh
 
 echo 'completed!'
